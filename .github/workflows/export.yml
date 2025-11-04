@@ -1,4 +1,4 @@
-name: Export Studio 0.23.11
+name: Export Studio 0.23.10
 
 on:
   workflow_dispatch:
@@ -9,11 +9,11 @@ jobs:
     steps:
       - name: Pull image
         run: |
-          docker pull ghcr.io/supabase/studio:0.23.11
-          docker save -o studio-0.23.11.tar ghcr.io/supabase/studio:0.23.11
+          docker pull ghcr.io/supabase/studio:0.23.10
+          docker save -o studio-0.23.10.tar ghcr.io/supabase/studio:0.23.10
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: studio-0.23.11
-          path: studio-0.23.11.tar
+          name: studio-0.23.10
+          path: studio-0.23.10.tar
