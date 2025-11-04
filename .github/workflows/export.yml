@@ -1,0 +1,19 @@
+name: Export Studio 0.23.11
+
+on:
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull image
+        run: |
+          docker pull supabase/studio:0.23.11
+          docker save -o studio-0.23.11.tar supabase/studio:0.23.11
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: studio-0.23.11
+          path: studio-0.23.11.tar
